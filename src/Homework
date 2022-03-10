@@ -1,9 +1,0 @@
-public class MenuManager {
-	public static void main(String[] args) {
-		int radious=5;
-		double answer=radious*radious*Math.PI;
-		System.out.printf("%dx%d=%.2f", radious, radious, answer);
-	
-	}
-
-}

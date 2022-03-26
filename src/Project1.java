@@ -14,36 +14,57 @@ public class Project1 {
 			number = input.nextInt();
 			
 			if(number==1) {
-				System.out.printf("ID와 이름을 입력하세요:\n");
-				int ID = input.nextInt();
-				String studentname=input.next();
-				System.out.printf("ID:%d, 내이름: %s\n", ID, studentname);
+				addStudent();
 			}
 			else if(number==2) {
-				System.out.printf("ID를 입력하세요\n");
-				int ID=input.nextInt();
-				System.out.printf("ID는 : %d\n", ID);
+				deleteStudent();
 			}
 			else if(number==3) {
-				System.out.printf("ID를 입력하세요\n");
-				int ID=input.nextInt();
-				System.out.printf("ID는 : %d\n", ID);
+				editStudent();
 			}
 			else if(number==4) {
-				System.out.printf("ID를 입력하세요\n");
-				int ID=input.nextInt();
-				System.out.printf("ID는 : %d\n", ID);
+				viewStudent();
 			}
 			else if(number==5) {
-				System.out.printf("되돌아갑니다.\n");
+				showStudent();
+				continue;
 			}
-			else if(number==2) {
-				System.out.printf("EXIT\n");
+			else {
+				exitStudent();
 				break;
 			}
-			
-			
 		}
+	}
+	public static void addStudent() {
+		Scanner input = new Scanner(System.in); 
+		System.out.print("ID를 입력하세요:\n");
+		int ID = input.nextInt();
+		System.out.printf("이름을 입력하세요:\n");
+		String Name = input.next();
+		System.out.printf("Email을 입력하세요:\n");
+		String Email = input.next();
+		System.out.printf("전화번호를 입력하세요:\n");
+		String Phone = input.next();
+	}
+	public static void deleteStudent() {
+		Scanner input = new Scanner(System.in); 
+		System.out.printf("ID를 입력하세요:\n");
+		int ID = input.nextInt();
+	}
+	public static void editStudent() {
+		Scanner input = new Scanner(System.in); 
+		System.out.printf("ID를 입력하세요:\n");
+		int ID = input.nextInt();
+	}
+	public static void viewStudent() {
+		Scanner input = new Scanner(System.in); 
+		System.out.printf("ID를 입력하세요:\n");
+		int ID = input.nextInt();
+	}
+	public static void showStudent() {
+	}
+	public static void exitStudent() {
+		System.out.printf("EXIT\n");
 	}
 
 }

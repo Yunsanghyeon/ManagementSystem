@@ -24,6 +24,12 @@ public class MystudyManager {
 				subjects.add(subject);
 				break;
 			}
+			else if(kind==2) {
+				subject = new EnglishSubject();
+				subject.getSubjectInput(input);
+				subjects.add(subject);
+				break;
+			}
 			else {
 				System.out.print("Select num for Grade Kind:\n");
 			}
@@ -49,7 +55,7 @@ public class MystudyManager {
 		}
 	}
 	public void editSubject() {
-		System.out.print("Subject Name:");
+		System.out.print("Subject difficulty:");
 		int subjectdifficulty=input.nextInt();
 		for(int i=0; i<subjects.size(); i++) {
 			Subject subject = subjects.get(i);
@@ -57,40 +63,41 @@ public class MystudyManager {
 				int num = -1;
 				while(num!=5) {
 					System.out.println("**Subject Info Edit Menu**");
-					System.out.println("1. Edit Name");
-					System.out.println("2. Edit Professor");
-					System.out.println("3. Edit Midterm");
-					System.out.println("4. Edit Final exam");
+					System.out.println("1. Edit difficulty");
+					System.out.println("2. Edit Name");
+					System.out.println("3. Edit Professor");
+					System.out.println("4. Edit Exam Score");
 					System.out.println("5. Exit");
 					System.out.println("Select one number between 1~5:");
+					num = input.nextInt();
 					if(num==1) {
+						System.out.print("Subject difficult:");
+						int difficulty = input.nextInt();
+						subject.setdifficulty(difficulty);
+					}
+					else if(num==2) {	
 						System.out.print("Subject Name:");
 						String subname = input.next();
 						subject.setSubname(subname);
 					}
-					else if(num==2) {
+					else if(num==3) {
 						System.out.print("Professor Name:");
 						String proname =  input.next();
 						subject.setProname(proname);
 					}
-					else if(num==3) {
-						System.out.print("Midterm score:");
-						int midScore =  input.nextInt();
-						subject.setMidScore(midScore);
-					}
 					else if(num==4) {
-						System.out.print("Final exam grade score:");
-						int finScore = input.nextInt();
-						subject.setFinScore(finScore);
+						System.out.print("exam score:");
+						int Score =  input.nextInt();
+						subject.setScore(Score);
 					}
 					else {
 						continue;
 					}//if
 				}//while
-			}
-			break;
-		}//if
-	}//for
+				break;
+			}//if
+		}//for
+	}
 	public void viewSubject() {
 		System.out.println("#of registerd Subjects :"+subjects.size());
 		for(int i = 0; i<subjects.size(); i++) {

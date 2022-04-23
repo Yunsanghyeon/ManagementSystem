@@ -61,7 +61,7 @@ public class Subject {
 		System.out.print("Professor Name\n");
 		String proname = input.next();
 		this.setProname(proname);
-		System.out.print("Midterm Score:\n");
+		System.out.print("Score:\n");
 		int score=input.nextInt();
 		this.setScore(score);
 	}

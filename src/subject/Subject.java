@@ -6,8 +6,7 @@ public class Subject {
 	protected int difficulty;
 	protected String subname;
 	protected String proname;
-	protected int midscore;
-	protected int finscore;
+	protected int score;
 	
 	public Subject() {
 	}
@@ -16,12 +15,11 @@ public class Subject {
 		this.subname=subname;
 		this.proname=proname;
 	}
-	public Subject(int difficulty, String subname, String proname, int midscore, int finscore) {
+	public Subject(int difficulty, String subname, String proname, int score) {
 		this.difficulty=difficulty;
 		this.subname=subname;
 		this.proname=proname;
-		this.midscore=midscore;
-		this.finscore=finscore;
+		this.score=score;
 	}
 	public int getdifficulty() {
 		return difficulty;
@@ -41,39 +39,31 @@ public class Subject {
 	public void setProname(String proname) {
 		this.proname = proname;
 	}
-	public int getMidScore() {
-		return midscore;
+	public int getScore() {
+		return score;
 	}
-	public void setMidScore(int midscore) {
-		this.midscore = midscore;
-	}
-	public int getFinScore() {
-		return finscore;
-	}
-	public void setFinScore(int finscore) {
-		this.finscore = finscore;
+	public void setScore(int score) {
+		this.score = score;
 	}
 	public void setKind(SubjectKind kind) {
 		this.kind = kind;
 	}
 	public void printInfo() {
-		System.out.println("Subject difficulty:" +difficulty+"Subject name:"+subname+"Professor name:"+proname+"Midterm Score:"+midscore+"final Score:"+finscore);
+		System.out.println("Subject difficulty:" +difficulty+"Subject name:"+subname+"Professor name:"+proname+"Midterm Score:"+score);
 	}
 	public void getSubjectInput(Scanner input) {
-		System.out.print("Subject difficulty");
+		System.out.print("Subject difficulty\n");
 		int difficulty = input.nextInt();
-		System.out.print("Subject Name");
+		this.setdifficulty(difficulty);
+		System.out.print("Subject Name\n");
 		String subname = input.next();
 		this.setSubname(subname);
-		System.out.print("Professor Name");
+		System.out.print("Professor Name\n");
 		String proname = input.next();
 		this.setProname(proname);
-		System.out.print("Midterm Score:");
-		int midscore=input.nextInt();
-		this.setMidScore(midscore);
-		System.out.print("Final Exam Score:");
-		int finscore=input.nextInt();
-		this.setMidScore(finscore);
+		System.out.print("Midterm Score:\n");
+		int score=input.nextInt();
+		this.setScore(score);
 	}
 	
 }

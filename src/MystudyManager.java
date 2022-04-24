@@ -12,8 +12,8 @@ public class MystudyManager {
 	public void addSubject() {
 		int kind = 0;
 		Subject subject;
-		while(kind != 1 && kind != 2 && kind != 3 && kind !=4) {
-			System.out.print("Select Suject Kind:\n");
+		while(kind != 1 && kind != 2 && kind != 3 && kind !=4) {//입력값에 따라 과목이 정지는 조건
+			System.out.print("Select Suject Kind:\n");//과목을 정할 반복문
 			System.out.print("1  Math\n");
 			System.out.print("2  Science\n");
 			System.out.print("3  Scoiety\n");

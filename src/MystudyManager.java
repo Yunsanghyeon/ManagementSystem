@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import subject.EnglishSubject;
+import subject.SubjectData;
 import subject.Subject;
 import subject.SubjectKind;
 public class MystudyManager {
@@ -12,20 +12,34 @@ public class MystudyManager {
 	public void addSubject() {
 		int kind = 0;
 		Subject subject;
-		while(kind != 1 && kind != 2) {
-			System.out.print("Select Grade:\n");
-			System.out.print("1 for 1 Grade\n");
-			System.out.print("2 for 2 Grade\n");
-			System.out.print("Select num for Grade Kind between 1 and 2:\n");
+		while(kind != 1 && kind != 2 && kind != 3 && kind !=4) {
+			System.out.print("Select Suject Kind:\n");
+			System.out.print("1  Math\n");
+			System.out.print("2  Science\n");
+			System.out.print("3  Scoiety\n");
+			System.out.print("4  English\n");
+			System.out.print("Select num for Grade Kind between 1 and 4:\n");
 			kind = input.nextInt();
 			if(kind == 1) {
-				subject = new Subject();
+				subject = new SubjectData();
 				subject.getSubjectInput(input);
 				subjects.add(subject);
 				break;
 			}
 			else if(kind==2) {
-				subject = new EnglishSubject();
+				subject = new SubjectData();
+				subject.getSubjectInput(input);
+				subjects.add(subject);
+				break;			
+			}
+			else if(kind==3) {
+				subject = new SubjectData();
+				subject.getSubjectInput(input);
+				subjects.add(subject);
+				break;
+			}
+			else if(kind==4) {
+				subject = new SubjectData();
 				subject.getSubjectInput(input);
 				subjects.add(subject);
 				break;
@@ -36,18 +50,18 @@ public class MystudyManager {
 		}
 	}
 	public void deleteSubject(){
-		System.out.print("Subject difficulty:");
-		int subjectdifficulty=input.nextInt();
+		System.out.print("Subject Cord:");
+		int subjectcordnum=input.nextInt();
 		int index = -1;
 		for(int i = 0; i<subjects.size(); i++) {
-			if(subjects.get(i).getdifficulty()==subjectdifficulty) {
+			if(subjects.get(i).getcordnum()==subjectcordnum) {
 				index = i;
 				break;
 			}
 		}
 		if(index>=0) {
 			subjects.remove(index);
-			System.out.println("the Subject"+subjectdifficulty+"is deleted");
+			System.out.println("the Subject"+subjectcordnum+"is deleted");
 		}
 		else {
 			System.out.println("the subject has not been registered");
@@ -56,15 +70,15 @@ public class MystudyManager {
 	}
 	public void editSubject() {
 		System.out.print("Subject difficulty:");
-		int subjectdifficulty=input.nextInt();
+		int subjectcordnum=input.nextInt();
 		for(int i=0; i<subjects.size(); i++) {
 			Subject subject = subjects.get(i);
-			if(subject.getdifficulty()==subjectdifficulty) {
+			if(subject.getcordnum()==subjectcordnum) {
 				int num = -1;
 				while(num!=5) {
 					System.out.println("**Subject Info Edit Menu**");
 					System.out.println("1. Edit difficulty");
-					System.out.println("2. Edit Name");
+					System.out.println("2. Edit Subject Books Name");
 					System.out.println("3. Edit Professor");
 					System.out.println("4. Edit Exam Score");
 					System.out.println("5. Exit");
@@ -72,8 +86,8 @@ public class MystudyManager {
 					num = input.nextInt();
 					if(num==1) {
 						System.out.print("Subject difficult:");
-						int difficulty = input.nextInt();
-						subject.setdifficulty(difficulty);
+						int cordnum = input.nextInt();
+						subject.setcordnum(cordnum);
 					}
 					else if(num==2) {	
 						System.out.print("Subject Name:");

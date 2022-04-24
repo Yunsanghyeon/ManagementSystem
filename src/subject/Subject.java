@@ -1,31 +1,31 @@
 package subject;
 import java.util.Scanner;
 public class Subject {
-
+	
 	protected SubjectKind kind = SubjectKind.English;
-	protected int difficulty;
+	protected int cordnum;
 	protected String subname;
 	protected String proname;
 	protected int score;
 	
 	public Subject() {
 	}
-	public Subject(int difficulty, String subname, String proname) {
-		this.difficulty=difficulty;
+	public Subject(int cordnum, String subname, String proname) {
+		this.cordnum=cordnum;
 		this.subname=subname;
 		this.proname=proname;
 	}
-	public Subject(int difficulty, String subname, String proname, int score) {
-		this.difficulty=difficulty;
+	public Subject(int cordnum, String subname, String proname, int score) {
+		this.cordnum=cordnum;
 		this.subname=subname;
 		this.proname=proname;
 		this.score=score;
 	}
-	public int getdifficulty() {
-		return difficulty;
+	public int getcordnum() {
+		return cordnum;
 	}
-	public void setdifficulty(int difficulty) {
-		this.difficulty=difficulty;
+	public void setcordnum(int cordnum) {
+		this.cordnum=cordnum;
 	}
 	public String getSubname() {
 		return subname;
@@ -49,13 +49,13 @@ public class Subject {
 		this.kind = kind;
 	}
 	public void printInfo() {
-		System.out.println("Subject difficulty:" +difficulty+"Subject name:"+subname+"Professor name:"+proname+"Midterm Score:"+score);
+		System.out.println("Subject Cord Number: " +cordnum+" Subject name: "+subname+" Professor name: "+proname+" Score: "+score);
 	}
 	public void getSubjectInput(Scanner input) {
-		System.out.print("Subject difficulty\n");
-		int difficulty = input.nextInt();
-		this.setdifficulty(difficulty);
-		System.out.print("Subject Name\n");
+		System.out.print("Subject Crod Number\n");
+		int cordnum = input.nextInt();
+		this.setcordnum(cordnum);
+		System.out.print("Subject Book Name\n");
 		String subname = input.next();
 		this.setSubname(subname);
 		System.out.print("Professor Name\n");

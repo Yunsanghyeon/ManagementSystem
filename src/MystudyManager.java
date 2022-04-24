@@ -69,7 +69,7 @@ public class MystudyManager {
 		}
 	}
 	public void editSubject() {
-		System.out.print("Subject difficulty:");
+		System.out.print("Subject Cord Number:");
 		int subjectcordnum=input.nextInt();
 		for(int i=0; i<subjects.size(); i++) {
 			Subject subject = subjects.get(i);
@@ -77,7 +77,7 @@ public class MystudyManager {
 				int num = -1;
 				while(num!=5) {
 					System.out.println("**Subject Info Edit Menu**");
-					System.out.println("1. Edit difficulty");
+					System.out.println("1. Edit Cord Number");
 					System.out.println("2. Edit Subject Books Name");
 					System.out.println("3. Edit Professor");
 					System.out.println("4. Edit Exam Score");

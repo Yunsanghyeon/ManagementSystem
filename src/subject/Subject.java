@@ -49,7 +49,7 @@ public class Subject {
 		this.kind = kind;
 	}
 	public void printInfo() {
-		System.out.println("Subject Cord Number: " +cordnum+" Subject name: "+subname+" Professor name: "+proname+" Score: "+score);
+		System.out.println("Subject Cord Number: " +cordnum+" Subject book name: "+subname+" Professor name: "+proname+" Score: "+score);
 	}
 	public void getSubjectInput(Scanner input) {
 		System.out.print("Subject Crod Number\n");

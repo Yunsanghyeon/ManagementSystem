@@ -27,7 +27,7 @@ public class MenuMystudyManager {
 	        	 mystudyManager.viewSubject();
 	         }
 	         else {
-	        	 continue;
+	        	 break;
 	         }
 	    }
 	}

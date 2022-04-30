@@ -2,8 +2,8 @@ package subject;
 
 import java.util.Scanner;
 
-public class EnglishSubject extends Subject{
-	public EnglishSubject(SubjectKind kind) {
+public class MathSubject extends Subject {
+	public MathSubject(SubjectKind kind) {
 		this.kind=kind;
 	}
 
@@ -37,5 +37,5 @@ public class EnglishSubject extends Subject{
 			}
 		}
 	}
-}
 
+}

@@ -2,8 +2,8 @@ package subject;
 
 
 public enum SubjectKind {
-	Math,
-	Science,
-	Society,
-	English
+	MathSubject,
+	ScienceSubject,
+	SocietySubject,
+	EnglishSubject
 }

@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import subject.SubjectData;
+import subject.EnglishSubject;
+import subject.MathSubject;
+import subject.ScienceSubject;
+import subject.SocietySubject;
 import subject.Subject;
 import subject.SubjectKind;
 public class MystudyManager {
@@ -16,30 +20,30 @@ public class MystudyManager {
 			System.out.print("Select Suject Kind:\n");//과목을 정할 반복문
 			System.out.print("1  Math\n");
 			System.out.print("2  Science\n");
-			System.out.print("3  Scoiety\n");
+			System.out.print("3  Society\n");
 			System.out.print("4  English\n");
 			System.out.print("Select num for Grade Kind between 1 and 4:\n");
 			kind = input.nextInt();
 			if(kind == 1) {
-				subject = new SubjectData();
+				subject = new Subject(SubjectKind.MathSubject);
 				subject.getSubjectInput(input);
 				subjects.add(subject);
 				break;
 			}
 			else if(kind==2) {
-				subject = new SubjectData();
+				subject = new Subject(SubjectKind.ScienceSubject);
 				subject.getSubjectInput(input);
 				subjects.add(subject);
 				break;			
 			}
 			else if(kind==3) {
-				subject = new SubjectData();
+				subject = new Subject(SubjectKind.SocietySubject);
 				subject.getSubjectInput(input);
 				subjects.add(subject);
 				break;
 			}
 			else if(kind==4) {
-				subject = new SubjectData();
+				subject = new Subject(SubjectKind.EnglishSubject);
 				subject.getSubjectInput(input);
 				subjects.add(subject);
 				break;

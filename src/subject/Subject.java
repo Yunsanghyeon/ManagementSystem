@@ -2,13 +2,18 @@ package subject;
 import java.util.Scanner;
 public class Subject {
 	
-	protected SubjectKind kind = SubjectKind.English;
+	protected SubjectKind kind = SubjectKind.EnglishSubject;
 	protected int cordnum;
 	protected String subname;
 	protected String proname;
 	protected int score;
 	
 	public Subject() {
+		
+	}
+	
+	public Subject(SubjectKind kind) {
+		this.kind=kind;
 	}
 	public Subject(int cordnum, String subname, String proname) {
 		this.cordnum=cordnum;
@@ -20,6 +25,19 @@ public class Subject {
 		this.subname=subname;
 		this.proname=proname;
 		this.score=score;
+	}
+	public Subject(SubjectKind kind, int cordnum, String subname, String proname, int score) {
+		this.kind = kind;
+		this.cordnum=cordnum;
+		this.subname=subname;
+		this.proname=proname;
+		this.score=score;
+	}
+	public void setkind(SubjectKind kind) {
+		this.kind=kind;
+	}
+	public SubjectKind getKind() {
+		return kind;
 	}
 	public int getcordnum() {
 		return cordnum;
@@ -49,7 +67,22 @@ public class Subject {
 		this.kind = kind;
 	}
 	public void printInfo() {
-		System.out.println("Subject Cord Number: " +cordnum+" Subject book name: "+subname+" Professor name: "+proname+" Score: "+score);
+		String skind="none";
+		switch(this.kind) {
+		case MathSubject:
+			skind = "Math";
+			break;
+		case ScienceSubject:
+			skind = "Science";
+			break;
+		case SocietySubject:
+			skind = "Society";
+			break;
+		case EnglishSubject:
+			skind = "English";
+			break;
+		}
+		System.out.println("Subject kind:"+kind+"Subject Cord Number: " +cordnum+" Subject book name: "+subname+" Professor name: "+proname+" Score: "+score);
 	}
 	public void getSubjectInput(Scanner input) {
 		System.out.print("Subject Crod Number\n");

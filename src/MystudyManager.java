@@ -25,25 +25,25 @@ public class MystudyManager {
 			System.out.print("Select num for Grade Kind between 1 and 4:\n");
 			kind = input.nextInt();
 			if(kind == 1) {
-				subject = new Subject(SubjectKind.MathSubject);
+				subject = new MathSubject(SubjectKind.MathSubject);
 				subject.getSubjectInput(input);
 				subjects.add(subject);
 				break;
 			}
 			else if(kind==2) {
-				subject = new Subject(SubjectKind.ScienceSubject);
+				subject = new ScienceSubject(SubjectKind.ScienceSubject);
 				subject.getSubjectInput(input);
 				subjects.add(subject);
 				break;			
 			}
 			else if(kind==3) {
-				subject = new Subject(SubjectKind.SocietySubject);
+				subject = new SocietySubject(SubjectKind.SocietySubject);
 				subject.getSubjectInput(input);
 				subjects.add(subject);
 				break;
 			}
 			else if(kind==4) {
-				subject = new Subject(SubjectKind.EnglishSubject);
+				subject = new EnglishSubject(SubjectKind.EnglishSubject);
 				subject.getSubjectInput(input);
 				subjects.add(subject);
 				break;
@@ -89,7 +89,7 @@ public class MystudyManager {
 					System.out.println("Select one number between 1~5:");
 					num = input.nextInt();
 					if(num==1) {
-						System.out.print("Subject difficult:");
+						System.out.print("Subject Cordnum:");
 						int cordnum = input.nextInt();
 						subject.setcordnum(cordnum);
 					}

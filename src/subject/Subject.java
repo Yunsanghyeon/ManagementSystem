@@ -82,7 +82,7 @@ public class Subject {
 			skind = "English";
 			break;
 		}
-		System.out.println("Subject kind:"+kind+"Subject Cord Number: " +cordnum+" Subject book name: "+subname+" Professor name: "+proname+" Score: "+score);
+		System.out.println("Subject kind: "+kind+" Subject Cord Number: " +cordnum+" Subject book name: "+subname+" Professor name: "+proname+" Score: "+score);
 	}
 	public void getSubjectInput(Scanner input) {
 		System.out.print("Subject Crod Number\n");

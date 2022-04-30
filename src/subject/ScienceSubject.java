@@ -3,9 +3,20 @@ package subject;
 import java.util.Scanner;
 
 public class ScienceSubject extends Subject {
+	protected int Sciencebuildingaddress;
+	
+	public int getSciencebuildingaddress() {
+		return Sciencebuildingaddress;
+	}
+	public void setSciencebuildingaddress(int Sciencebuildingaddress) {
+		this.Sciencebuildingaddress = Sciencebuildingaddress;
+	}
+	
 	public ScienceSubject(SubjectKind kind) {
 		this.kind=kind;
 	}
+	
+
 
 	public void getSubjectInput(Scanner input) {
 		System.out.print("Subject Cord number:");
@@ -36,6 +47,40 @@ public class ScienceSubject extends Subject {
 				
 			}
 		}
+		
+		answer = 'x';
+		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N') {
+			System.out.print("Do you know your Science Building Address Number?(Y/N)");
+			answer = input.next().charAt(0);
+			if(answer == 'y' || answer == 'Y') {
+				System.out.print("Science Building Address");
+				int Sciencebuildingaddress = input.nextInt();
+				this.setSciencebuildingaddress(Sciencebuildingaddress);
+			}
+			else if(answer == 'n' || answer == 'N') {
+				this.setSciencebuildingaddress(0);
+			}
+			else {
+			}
+		}
+	}
+	public void printInfo() {
+		String skind="none";
+		switch(this.kind) {
+		case MathSubject:
+			skind = "Math";
+			break;
+		case ScienceSubject:
+			skind = "Science";
+			break;
+		case SocietySubject:
+			skind = "Society";
+			break;
+		case EnglishSubject:
+			skind = "English";
+			break;
+		}
+		System.out.println("Subject kind: "+skind+" Subject Cord Number: " +cordnum+" Subject book name: "+subname+" Professor name: "+proname+" Score: "+score+" Science Building Address: "+Sciencebuildingaddress);
 	}
 
 }

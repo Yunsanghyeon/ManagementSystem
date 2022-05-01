@@ -1,35 +1,33 @@
 package subject;
-
 import java.util.Scanner;
 
 public class SocietySubject extends Subject {
-	
-	protected int Classtime;
-	
-	public int getClasstime() {
-		return Classtime;
+
+	protected int ContryNumber;
+
+	public int getContryNumber() {
+		return ContryNumber;
 	}
-	public void setClasstime(int Classtime) {
-		this.Classtime = Classtime;
+	public void setContryNumber(int ContryNumber) {
+		this.ContryNumber = ContryNumber;
 	}
-	
+
 	public SocietySubject(SubjectKind kind) {
 		this.kind=kind;
 	}
-
 	public void getSubjectInput(Scanner input) {
 		System.out.print("Subject Cord number:");
 		int cordnum = input.nextInt();
 		this.setcordnum(cordnum);
-		
+
 		System.out.print("Subject Book Name:");
 		String subname = input.next();
 		this.setSubname(subname);
-		
+
 		System.out.print("Professor Name:");
 		String proname = input.next();
 		this.setProname(proname);
-		
+
 		char answer= 'x';
 		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N') {
 			System.out.print("Do you know your Exam Score?(Y/N)");
@@ -43,20 +41,20 @@ public class SocietySubject extends Subject {
 				this.setScore(0);
 			}
 			else {
-				
+
 			}
 		}
 		answer = 'x';
 		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N') {
-			System.out.print("Do you know your Society Class time?(Y/N)");
+			System.out.print("How many countries do you study social studies in?(Y/N)");
 			answer = input.next().charAt(0);
 			if(answer == 'y' || answer == 'Y') {
-				System.out.print("Society start class time:");
-				int Classtime = input.nextInt();
-				this.setClasstime(Classtime);
+				System.out.print("Contry Number:");
+				int ContryNumber = input.nextInt();
+				this.setContryNumber(ContryNumber);
 			}
 			else if(answer == 'n' || answer == 'N') {
-				this.setClasstime(0);
+				this.setContryNumber(0);
 			}
 			else {
 			}
@@ -78,7 +76,8 @@ public class SocietySubject extends Subject {
 			skind = "English";
 			break;
 		}
-		System.out.println("Subject kind: "+skind+" Subject Cord Number: " +cordnum+" Subject book name: "+subname+" Professor name: "+proname+" Score: "+score+" Society Class Time: "+Classtime);
+		System.out.println("Subject kind: "+skind+" Subject Cord Number: " +cordnum+" Subject book name: "+subname+
+				" Professor name: "+proname+" Score: "+score+" Contry Number: "+ContryNumber);
 	}
 
 }

@@ -1,18 +1,17 @@
 package subject;
-
 import java.util.Scanner;
 
 public class MathSubject extends Subject {
-	
-	protected int totalpage;
-	
-	public int gettotalpage() {
-		return totalpage;
+
+	protected String field;
+
+	public String getfield() {
+		return field;
 	}
-	public void settotalpage(int totalpage) {
-		this.totalpage = totalpage;
+	public void setfield(String field) {
+		this.field = field;
 	}
-	
+
 	public MathSubject(SubjectKind kind) {
 		this.kind=kind;
 	}
@@ -22,15 +21,15 @@ public class MathSubject extends Subject {
 		System.out.print("Subject Cord number:");
 		int cordnum = input.nextInt();
 		this.setcordnum(cordnum);
-		
+
 		System.out.print("Subject Book Name:");
 		String subname = input.next();
 		this.setSubname(subname);
-		
+
 		System.out.print("Professor Name:");
 		String proname = input.next();
 		this.setProname(proname);
-		
+
 		char answer= 'x';
 		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N') {
 			System.out.print("Do you know your Exam Score?(Y/N)");
@@ -44,20 +43,20 @@ public class MathSubject extends Subject {
 				this.setScore(0);
 			}
 			else {
-				
+
 			}
 		}
 		answer = 'x';
 		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N') {
-			System.out.print("Do you know your Math Book Total Page Number?(Y/N)");
+			System.out.print("What mathematics field do you know how to study?(Y/N)");
 			answer = input.next().charAt(0);
 			if(answer == 'y' || answer == 'Y') {
-				System.out.print("Total page Number:");
-				int totalpage = input.nextInt();
-				this.settotalpage(totalpage);
+				System.out.print("Mathematics Field:");
+				String field = input.next();
+				this.setfield(field);
 			}
 			else if(answer == 'n' || answer == 'N') {
-				this.settotalpage(0);
+				this.setfield("");
 			}
 			else {
 			}
@@ -79,7 +78,8 @@ public class MathSubject extends Subject {
 			skind = "English";
 			break;
 		}
-		System.out.println("Subject kind: "+skind+" Subject Cord Number: " +cordnum+" Subject book name: "+subname+" Professor name: "+proname+" Score: "+score+" Total page: "+totalpage);
+		System.out.println("Subject kind: "+skind+" Subject Cord Number: " +cordnum+" Subject book name: "+subname+
+				" Professor name: "+proname+" Score: "+score+" Mathematics field: "+field);
 	}
 
 }

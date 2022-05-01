@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import subject.SubjectData;
 import subject.EnglishSubject;
 import subject.MathSubject;
 import subject.ScienceSubject;
@@ -9,30 +8,35 @@ import subject.Subject;
 import subject.SubjectKind;
 public class MystudyManager {
 	ArrayList<Subject> subjects = new ArrayList<Subject>();
+	//Subject객체를 사용하기 위한 선형리스트 생성
 	Scanner input;
+	//Scanner생성
 	MystudyManager(Scanner input){
 		this.input=input;
+		//MystudyManager에 입력받은 값을 Scanner input에 input에 할당
 	}
 	public void addSubject() {
-		int kind = 0;
-		Subject subject;
+		int kind = 0;//Scanner에서 입력받을 수를 할당받을 변수
+		Subject subject;//인스턴스 생성
 		while(kind != 1 && kind != 2 && kind != 3 && kind !=4) {//입력값에 따라 과목이 정지는 조건
 			System.out.print("Select Suject Kind:\n");//과목을 정할 반복문
 			System.out.print("1  Math\n");
 			System.out.print("2  Science\n");
 			System.out.print("3  Society\n");
 			System.out.print("4  English\n");
-			System.out.print("Select num for Grade Kind between 1 and 4:\n");
-			kind = input.nextInt();
+			System.out.print("Select num for Subject Kind between 1 and 4:\n");
+			kind = input.nextInt();//입력받은 input의 값을 kind에 할당
 			if(kind == 1) {
 				subject = new MathSubject(SubjectKind.MathSubject);
+				//Subjectkind.MathSubject를 통해 Mathsubject에 skind를 Math Subject를 출력할당한다.  
 				subject.getSubjectInput(input);
-				subjects.add(subject);
+				//public void getSubjectInput(Scanner input)에 값을 입력
+				subjects.add(subject);//선형리스트에 subject를 할당
 				break;
 			}
 			else if(kind==2) {
 				subject = new ScienceSubject(SubjectKind.ScienceSubject);
-				subject.getSubjectInput(input);
+				subject.getSubjectInput(input); 
 				subjects.add(subject);
 				break;			
 			}
@@ -49,22 +53,25 @@ public class MystudyManager {
 				break;
 			}
 			else {
-				System.out.print("Select num for Grade Kind:\n");
+				System.out.print("Select num for Subject Kind:\n");
 			}
 		}
 	}
 	public void deleteSubject(){
 		System.out.print("Subject Cord:");
 		int subjectcordnum=input.nextInt();
+		//과목의 과목코드를 입력하기 위한 코드
 		int index = -1;
 		for(int i = 0; i<subjects.size(); i++) {
+			//선형리스트의 크기까지 반복
 			if(subjects.get(i).getcordnum()==subjectcordnum) {
+				//코드번호가 선형리스트의 입력되어있는 값과 같은 지를 찾기 위한 코드
 				index = i;
 				break;
 			}
 		}
 		if(index>=0) {
-			subjects.remove(index);
+			subjects.remove(index);//리스트에 있던 과목 삭제
 			System.out.println("the Subject"+subjectcordnum+"is deleted");
 		}
 		else {
@@ -90,8 +97,9 @@ public class MystudyManager {
 					num = input.nextInt();
 					if(num==1) {
 						System.out.print("Subject Cordnum:");
-						int cordnum = input.nextInt();
+						int cordnum = input.nextInt();//입력받은 값을 cordnum에 할당
 						subject.setcordnum(cordnum);
+						// Subject클래스의 메소드 setcordnum에 cordnum을 할당하여 값을 편집
 					}
 					else if(num==2) {	
 						System.out.print("Subject Name:");
@@ -120,7 +128,7 @@ public class MystudyManager {
 		System.out.println("#of registerd Subjects :"+subjects.size());
 		for(int i = 0; i<subjects.size(); i++) {
 			subjects.get(i).printInfo();
+			//여태까지 입력받은 값을 출력하기 위한 메소드
 		}
 	}
-
 }

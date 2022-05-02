@@ -2,7 +2,7 @@ package subject;
 import java.util.Scanner;
 public class Subject {
 
-	protected SubjectKind kind = SubjectKind.EnglishSubject;
+	protected SubjectKind kind;
 	protected int cordnum;
 	protected String subname;
 	protected String proname;
@@ -11,10 +11,6 @@ public class Subject {
 	public Subject() {
 
 	}
-	public Subject(SubjectKind kind) {
-		this.kind = kind;
-	}
-	
 
 	public Subject(int cordnum, String subname, String proname, int score) {
 		this.cordnum=cordnum;

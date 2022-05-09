@@ -1,7 +1,7 @@
 package subject;
 import java.util.Scanner;
 public abstract class Subject {
-
+	//abstract¼±¾ð
 	protected SubjectKind kind = SubjectKind.EnglishSubject;
 	protected int cordnum;
 	protected String subname;

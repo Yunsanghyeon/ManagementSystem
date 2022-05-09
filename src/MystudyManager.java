@@ -28,10 +28,8 @@ public class MystudyManager {
          System.out.print("Select num for Subject Kind between 1 and 4:\n");
          kind = input.nextInt();//입력받은 input의 값을 kind에 할당
          if(kind == 1) {
-            subjectInput = new MathSubject(SubjectKind.MathSubject);
-            //Subjectkind.MathSubject를 통해 Mathsubject에 skind를 Math Subject를 출력할당한다.  
+            subjectInput = new MathSubject(SubjectKind.MathSubject); 
             subjectInput.getSubjectInput(input);
-            //public void getSubjectInput(Scanner input)에 값을 입력
             subjects.add(subjectInput);//선형리스트에 subject를 할당
             break;
          }

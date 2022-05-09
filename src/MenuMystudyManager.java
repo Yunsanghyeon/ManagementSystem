@@ -1,6 +1,6 @@
 import java.util.Scanner;
-
 public class MenuMystudyManager {
+	//출력하기위한 클래스
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);//Scanner입력
 		MystudyManager mystudyManager = new MystudyManager(input);

@@ -1,8 +1,7 @@
 package subject;
 import java.util.Scanner;
-
 public class ScienceSubject extends Subject implements SubjectInput{
-	
+	//implements로 인터페이스 사용
 	protected String Dynamics;
 
 	public String getDynamics() {

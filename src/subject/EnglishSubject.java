@@ -2,7 +2,7 @@ package subject;
 import java.util.Scanner;
 
 public class EnglishSubject extends Subject implements SubjectInput{
-
+	//implements로 인터페이스 사용
 	protected String pronunciation;
 	//영어 클래스 만의 특별한 조건
 	public String getpronunciation() {

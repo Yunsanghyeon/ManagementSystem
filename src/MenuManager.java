@@ -28,10 +28,6 @@ public class MenuManager {
             studentManager.viewStudent();
          }
          else if(number==5) {
-            studentManager.showStudent();
-            continue;
-         }
-         else if(number==6) {
             studentManager.ExitStudent();
             break;
          }

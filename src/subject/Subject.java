@@ -1,8 +1,8 @@
 package subject;
 import java.util.Scanner;
-public class Subject {
+public abstract class Subject {
 
-	protected SubjectKind kind;
+	protected SubjectKind kind = SubjectKind.EnglishSubject;
 	protected int cordnum;
 	protected String subname;
 	protected String proname;
@@ -64,25 +64,8 @@ public class Subject {
 	public void setKind(SubjectKind kind) {
 		this.kind = kind;
 	}
-	public void printInfo() {
-		String skind="none";
-		switch(this.kind) {
-		case MathSubject:
-			skind = "Math";
-			break;
-		case ScienceSubject:
-			skind = "Science";
-			break;
-		case SocietySubject:
-			skind = "Society";
-			break;
-		case EnglishSubject:
-			skind = "English";
-			break;
-		}
-		System.out.println("Subject kind: "+skind+" Subject Cord Number: " +cordnum+" Subject book name: "
-				+subname+" Professor name: "+proname+" Score: "+score);
-	}
+	public abstract void printInfo();
+	
 	/*출력을 하기 윈한 메소드로 Subject의 자식 클래스에 오버라이딩 되어 값을 출력하기 위한 틀이 되고 
 	 viewSubject()에서 코드가 작성되 최종적으로 MenuMystudyManager에 출력하게 해주는 코드*/
 	public void getSubjectInput(Scanner input) {

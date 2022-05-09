@@ -17,7 +17,7 @@ public class Calculator {
 		else if(sign=='*') {
 			System.out.printf("%d %c %d = %d", num1,sign,num2,num1*num2);
 		}
-		else if(sign=='-') {
+		else if(sign=='/') {
 			System.out.printf("%d %c %d = %d", num1,sign,num2,num1/num2);
 		}
 		else {

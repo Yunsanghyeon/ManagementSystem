@@ -1,7 +1,7 @@
 package subject;
 import java.util.Scanner;
 
-public class EnglishSubject extends Subject{
+public class EnglishSubject extends Subject implements SubjectInput{
 
 	protected String pronunciation;
 	//영어 클래스 만의 특별한 조건
@@ -85,3 +85,4 @@ public class EnglishSubject extends Subject{
 				" Professor name: "+proname+" Score: "+score+" Contry name: "+pronunciation);
 	}
 }
+

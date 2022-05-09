@@ -1,7 +1,7 @@
 package subject;
 import java.util.Scanner;
 
-public class SocietySubject extends Subject {
+public class SocietySubject extends Subject implements SubjectInput{
 
 	protected int ContryNumber;
 

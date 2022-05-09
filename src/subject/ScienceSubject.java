@@ -1,7 +1,7 @@
 package subject;
 import java.util.Scanner;
 
-public class ScienceSubject extends Subject {
+public class ScienceSubject extends Subject implements SubjectInput{
 	
 	protected String Dynamics;
 

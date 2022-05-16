@@ -1,7 +1,10 @@
 package subject;
 import java.util.Scanner;
+
+import exception.SubnameFormatException;
+
 public class MathSubject extends Subject implements SubjectInput{
-	//implements로 인터페이스 사용
+
 	protected String field;
 
 	public String getfield() {
@@ -21,10 +24,16 @@ public class MathSubject extends Subject implements SubjectInput{
 		int cordnum = input.nextInt();
 		this.setcordnum(cordnum);
 
-		System.out.print("Subject Book Name:");
-		String subname = input.next();
-		this.setSubname(subname);
-
+		while(true) {
+			try {
+				System.out.print("Subject Book Name\n");
+				subname = input.next();
+				this.setSubname(subname);
+				break;
+			} catch (SubnameFormatException e) {
+				System.out.println("Incorrect SubjectName Format. put the subname that contains - ");
+			}
+		}
 		System.out.print("Professor Name:");
 		String proname = input.next();
 		this.setProname(proname);

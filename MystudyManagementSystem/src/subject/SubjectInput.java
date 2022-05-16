@@ -1,12 +1,16 @@
 package subject;
+
 import java.util.Scanner;
+
+import exception.SubnameFormatException;
+
 public interface SubjectInput {
-	//인터페이스를 사용하기위한 클래스
+	
 	public int getcordnum();
 	
 	public void setcordnum(int cordnum);
 	
-	public void setSubname(String subname);
+	public void setSubname(String subname) throws SubnameFormatException;
 	
 	public void setProname(String proname);
 	

@@ -1,8 +1,10 @@
 package subject;
 import java.util.Scanner;
 
+import exception.SubnameFormatException;
+
 public class EnglishSubject extends Subject implements SubjectInput{
-	//implements로 인터페이스 사용
+
 	protected String pronunciation;
 	//영어 클래스 만의 특별한 조건
 	public String getpronunciation() {
@@ -22,10 +24,16 @@ public class EnglishSubject extends Subject implements SubjectInput{
 		//Scanner를 통해 cordnum의 값을 할당 
 		this.setcordnum(cordnum);
 		//값을 할당 받은 cordnum으로 setcordnum에 값을 할당
-		System.out.print("Subject Book Name:");
-		String subname = input.next();
-		this.setSubname(subname);
-
+		while(true) {
+			try {
+				System.out.print("Subject Book Name\n");
+				subname = input.next();
+				this.setSubname(subname);
+				break;
+			} catch (SubnameFormatException e) {
+				System.out.println("Incorrect SubjectName Format. put the subname that contains - ");
+			}
+		}
 		System.out.print("Professor Name:");
 		String proname = input.next();
 		this.setProname(proname);
@@ -85,4 +93,3 @@ public class EnglishSubject extends Subject implements SubjectInput{
 				" Professor name: "+proname+" Score: "+score+" Contry name: "+pronunciation);
 	}
 }
-

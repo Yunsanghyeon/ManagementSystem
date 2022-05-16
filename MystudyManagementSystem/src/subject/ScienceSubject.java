@@ -1,7 +1,12 @@
 package subject;
 import java.util.Scanner;
+
+import exception.SubnameFormatException;
+
 public class ScienceSubject extends Subject implements SubjectInput{
-	//implements로 인터페이스 사용
+	
+	
+	
 	protected String Dynamics;
 
 	public String getDynamics() {
@@ -14,6 +19,10 @@ public class ScienceSubject extends Subject implements SubjectInput{
 	public ScienceSubject(SubjectKind kind) {
 		this.kind=kind;
 	}
+	
+	public void setSubjectSubName(Scanner input) {
+		
+	}
 
 
 
@@ -21,11 +30,16 @@ public class ScienceSubject extends Subject implements SubjectInput{
 		System.out.print("Subject Cord number:");
 		int cordnum = input.nextInt();
 		this.setcordnum(cordnum);
-
-		System.out.print("Subject Book Name:");
-		String subname = input.next();
-		this.setSubname(subname);
-
+		while(true) {
+			try {
+				System.out.print("Subject Book Name\n");
+				subname = input.next();
+				this.setSubname(subname);
+				break;
+			} catch (SubnameFormatException e) {
+				System.out.println("Incorrect SubjectName Format. put the subname that contains - ");
+			}
+		}
 		System.out.print("Professor Name:");
 		String proname = input.next();
 		this.setProname(proname);

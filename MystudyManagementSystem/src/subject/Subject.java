@@ -1,7 +1,9 @@
 package subject;
 import java.util.Scanner;
+
+import exception.SubnameFormatException;
 public abstract class Subject {
-	//abstract선언
+
 	protected SubjectKind kind = SubjectKind.EnglishSubject;
 	protected int cordnum;
 	protected String subname;
@@ -38,7 +40,10 @@ public abstract class Subject {
 		return subname;
 	}
 	//subname의 변수값을 반환하기 위한 메소드
-	public void setSubname(String subname) {
+	public void setSubname(String subname) throws SubnameFormatException{
+		if(!subname.contains("-")&& !subname.equals("")) {
+			throw new SubnameFormatException();
+		}
 		this.subname = subname;
 	}
 	//subname의 변수값을 할당하기 위한 메소드
@@ -69,12 +74,23 @@ public abstract class Subject {
 	/*출력을 하기 윈한 메소드로 Subject의 자식 클래스에 오버라이딩 되어 값을 출력하기 위한 틀이 되고 
 	 viewSubject()에서 코드가 작성되 최종적으로 MenuMystudyManager에 출력하게 해주는 코드*/
 	public void getSubjectInput(Scanner input) {
+		String subname="";
+		while(!subname.contains("-")) {
+			while(true) {
+				try {
+					System.out.print("Subject Book Name\n");
+					subname = input.next();
+					this.setSubname(subname);
+					break;
+				} catch (SubnameFormatException e) {
+					System.out.println("Incorrect SubjectName Format. put the subname that contains - ");
+				}
+			}
+		}
 		System.out.print("Subject Crod Number\n");
 		int cordnum = input.nextInt();
 		this.setcordnum(cordnum);
-		System.out.print("Subject Book Name\n");
-		String subname = input.next();
-		this.setSubname(subname);
+		
 		System.out.print("Professor Name\n");
 		String proname = input.next();
 		this.setProname(proname);

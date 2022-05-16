@@ -4,9 +4,9 @@ import java.util.Scanner;
 import exception.SubnameFormatException;
 
 public class ScienceSubject extends Subject implements SubjectInput{
-	
-	
-	
+
+
+
 	protected String Dynamics;
 
 	public String getDynamics() {
@@ -19,9 +19,9 @@ public class ScienceSubject extends Subject implements SubjectInput{
 	public ScienceSubject(SubjectKind kind) {
 		this.kind=kind;
 	}
-	
+
 	public void setSubjectSubName(Scanner input) {
-		
+
 	}
 
 

@@ -32,7 +32,7 @@ public class SocietySubject extends Subject implements SubjectInput{
 				System.out.println("Incorrect SubjectName Format. put the subname that contains - ");
 			}
 		}
-		
+
 		System.out.print("Professor Name:");
 		String proname = input.next();
 		this.setProname(proname);

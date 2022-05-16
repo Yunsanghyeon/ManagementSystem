@@ -70,27 +70,27 @@ public abstract class Subject {
 		this.kind = kind;
 	}
 	public abstract void printInfo();
-	
+
 	/*출력을 하기 윈한 메소드로 Subject의 자식 클래스에 오버라이딩 되어 값을 출력하기 위한 틀이 되고 
 	 viewSubject()에서 코드가 작성되 최종적으로 MenuMystudyManager에 출력하게 해주는 코드*/
 	public void getSubjectInput(Scanner input) {
 		String subname="";
-		while(!subname.contains("-")) {
-			while(true) {
-				try {
-					System.out.print("Subject Book Name\n");
-					subname = input.next();
-					this.setSubname(subname);
-					break;
-				} catch (SubnameFormatException e) {
-					System.out.println("Incorrect SubjectName Format. put the subname that contains - ");
-				}
+
+		while(true) {
+			try {
+				System.out.print("Subject Book Name\n");
+				subname = input.next();
+				this.setSubname(subname);
+				break;
+			} catch (SubnameFormatException e) {
+				System.out.println("Incorrect SubjectName Format. put the subname that contains - ");
 			}
 		}
+
 		System.out.print("Subject Crod Number\n");
 		int cordnum = input.nextInt();
 		this.setcordnum(cordnum);
-		
+
 		System.out.print("Professor Name\n");
 		String proname = input.next();
 		this.setProname(proname);

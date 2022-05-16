@@ -24,7 +24,7 @@ public class EnglishSubject extends Subject implements SubjectInput{
 		//Scanner를 통해 cordnum의 값을 할당 
 		this.setcordnum(cordnum);
 		//값을 할당 받은 cordnum으로 setcordnum에 값을 할당
-		while(true) {
+		while(true) { //!subname.contains("-")
 			try {
 				System.out.print("Subject Book Name\n");
 				subname = input.next();

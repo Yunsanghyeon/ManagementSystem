@@ -1,18 +1,24 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 import exception.SubnameFormatException;
 import subject.EnglishSubject;
 import subject.MathSubject;
 import subject.ScienceSubject;
 import subject.SocietySubject;
-import subject.Subject;
 import subject.SubjectInput;
 import subject.SubjectKind;
-public class MystudyManager {
+public class MystudyManager implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7193432009293652395L;
+	
 	ArrayList<SubjectInput> subjects = new ArrayList<SubjectInput>();
 	//Subject객체를 사용하기 위한 선형리스트 생성
-	Scanner input;
+	transient Scanner input;
 	//Scanner생성
 	MystudyManager(Scanner input){
 		this.input=input;

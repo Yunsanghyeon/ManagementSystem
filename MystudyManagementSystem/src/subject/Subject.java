@@ -1,9 +1,14 @@
 package subject;
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.SubnameFormatException;
-public abstract class Subject {
+public abstract class Subject implements SubjectInput, Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5303456305330845130L;
 	protected SubjectKind kind = SubjectKind.EnglishSubject;
 	protected int cordnum;
 	protected String subname;

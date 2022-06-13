@@ -9,11 +9,11 @@ import gui.SubjectAdder;
 import gui.SubjectViewer;
 import gui.WindowFrame;
 
-public class ButtonAddListener implements ActionListener {
+public class SubjectAdderCancelListener implements ActionListener {
 	
 	WindowFrame frame;
 	
-	public ButtonAddListener(WindowFrame frame) {
+	public SubjectAdderCancelListener(WindowFrame frame) {
 		this.frame = frame;
 	}
 
@@ -23,7 +23,7 @@ public class ButtonAddListener implements ActionListener {
 //		SubjectAdder adder = frame.getSubjectadder();
 //		frame.setupPanel(adder);
 		frame.getContentPane().removeAll();
-		frame.getContentPane().add(frame.getSubjectadder());//sujbectviewer을 가져와서 add하고
+		frame.getContentPane().add(frame.getMenuselection());//menuselection가져옴
 		frame.revalidate();
 		frame.repaint();
 	}
